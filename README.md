@@ -5,6 +5,7 @@ Simple tool for calculate the numerical result from a expression string by pytho
 Based on stack and queue
 
 Opcalc was still under development, sometimes the result may be wrong= =
+If you find one expression get a wrong result, you can raise the Issue and I will fix it!
 
 ## Install
 
@@ -50,3 +51,11 @@ print(result)
 ```
 
 The result should be 23.191846935456855
+
+## Releases
+Lastest version: opcalc==0.0.1a2
+```
+pip install opcalc==0.0.1a2
+```
+fixed bug: 
+1. 2*2^2^2 will be consider as (2*2^2)^2 instead of the correct form 2*(2^2^2)
