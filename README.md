@@ -1,7 +1,9 @@
 # Python Opcalc 0.0.1
 
 Simple tool for calculate the numerical result from a expression string by python
+
 This code mainly focused on the principle of expression calculation by using stack (one of the basic data structure)
+
 You can use eval() function in python as well!
 
 ## Install
@@ -72,7 +74,9 @@ print("eval Time:"+str(time()-start_time))
 ```
 
 result:
+
 Opcalc Time:0.7659511566162109
+
 eval Time:0.17852163314819336
 
 Although it is slower,but the principle of using stack remain the same, you can rewrite it into other languages easily!
