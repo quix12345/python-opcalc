@@ -31,7 +31,7 @@ with open("README.MD", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="opcalc",
-    version="0.0.1a",
+    version="0.0.1a2",
     author="Quix Fan @ZQWEI-Tech",
     author_email="qxdnfsy@126.com",
     description="Simple tool for calculate the numerical result from a expression string by python",

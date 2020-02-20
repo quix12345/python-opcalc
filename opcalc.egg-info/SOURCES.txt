@@ -1,0 +1,8 @@
+README.md
+setup.py
+opcalc/__init__.py
+opcalc/core.py
+opcalc.egg-info/PKG-INFO
+opcalc.egg-info/SOURCES.txt
+opcalc.egg-info/dependency_links.txt
+opcalc.egg-info/top_level.txt
