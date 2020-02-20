@@ -58,4 +58,4 @@ Lastest version: opcalc==0.0.1a2
 pip install opcalc==0.0.1a2
 ```
 fixed bug: 
-1. 2*2^2^2 will be consider as (2*2^2)^2 instead of the correct form 2*(2^2^2)
+1. Input expression (2x2^2^2) will be processed as (2x2^2)^2 instead of the correct form 2x(2^2^2)
