@@ -211,17 +211,17 @@ class OperationCalculator():
 
 if __name__ == "__main__":
     calculator = OperationCalculator()
-    # calculator.input_str = "#*60"
-    # print(calculator.CalcExpression())
+    calculator.input_str = "#*60"
+    print(calculator.CalcExpression())
     print("SymCalc demo")
     print("Copyright (c) Quix Fan  @ZQWEI  All right reserved.")
-    # # calculator.input_str = "#*60"
-    # print(calculator.CalcExpression())
+    calculator.input_str = "#*60"
+    print(calculator.CalcExpression())
     while True:
         try:
             result = calculator.CalcExpression()
             print(result)
         except:
             print("Invalid Input!")
-        # calculator.input_str = "#*60"
-        # print(calculator.CalcExpression())
+        calculator.input_str = "#*60"
+        print(calculator.CalcExpression())

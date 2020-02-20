@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="704b14d3-c306-406a-918e-a848833c4ee2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/eval_perform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opcalc/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/opcalc/core.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,15 +13,6 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/opcalc/core.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="786">
-              <caret line="60" column="11" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eval_perform.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="38">
@@ -31,6 +20,15 @@
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/opcalc/core.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="225" selection-start-line="225" selection-end-line="226" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -50,12 +48,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/opcalc/core.py" />
         <option value="$PROJECT_DIR$/eval_perform.py" />
+        <option value="$PROJECT_DIR$/opcalc/core.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1750" />
@@ -109,7 +107,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.eval_perform">
+  <component name="RunManager" selected="Python.core">
     <configuration name="core" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python-opcalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -154,8 +152,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.eval_perform" />
         <item itemvalue="Python.core" />
+        <item itemvalue="Python.eval_perform" />
       </list>
     </recent_temporary>
   </component>
@@ -205,13 +203,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/opcalc/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="60" column="11" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/1272806299/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2549">
@@ -226,6 +217,13 @@
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/opcalc/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="225" selection-start-line="225" selection-end-line="226" selection-end-column="42" />
         </state>
       </provider>
     </entry>
