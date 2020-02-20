@@ -100,6 +100,8 @@ class OperationCalculator():
             # True for push,False for pop
             if op1 in "+-" and op2 in "*/":
                 return False
+            elif op1 in "^" and op2 in "^":
+                return True
             elif op1 not in "^" and op2 in "^":
                 return False
             elif op1 in "^" and op2 not in "^":
