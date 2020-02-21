@@ -2,6 +2,7 @@ class Stack(object):
     def __init__(self, limit=50000):
         self.stack = []  # 存放元素
         self.limit = limit  # 栈容量极限
+        self.show_time = 0
 
     def push(self, data):  # 判断栈是否溢出
         if len(self.stack) >= self.limit:
@@ -25,6 +26,18 @@ class Stack(object):
     def size(self):  # 返回栈的大小
         return len(self.stack)
 
+    def show(self):  # 显示栈中元素
+        print("step" + str(self.show_time))
+        if self.is_empty():
+            print("[" + "1" + "]" + "  ||" + "   " + "None" + "   ||")
+        else:
+            len = self.size()
+            i = 1
+            while i <= len:
+                print("[" + str(i) + "]" + "  ||" + "   " + str(self.stack[-i]) + "   ||")
+                i = i + 1
+        self.show_time = self.show_time + 1
+
 
 class OperationCalculator():
     def __init__(self):
@@ -32,6 +45,7 @@ class OperationCalculator():
         self.IsResultAvailable = False
         self.RPN = None
         self.result = None
+        self.IsShow = False
 
     def CalcExpression(self):
         '''
@@ -59,6 +73,7 @@ class OperationCalculator():
         '''
         输入原始用户字符串，输出元素分割后的列表
         '''
+
         def GetNumfromStr(num_str):
             if num_str != "":
                 # num_str不为空
@@ -104,9 +119,14 @@ class OperationCalculator():
 
         # 遍历完成后，取出最后的数字
         GetNumfromStr(num_str)
+        if self.IsShow:
+            print("Raw list: ",end='')
+            print(Raw_list)
         return Raw_list
 
     def Raw2RPN(self, Raw_list):
+        if self.IsShow:
+            print("\n输入元素分割列表，输出后缀表达式")
         '''
         输入元素分割列表，输出后缀表达式
         '''
@@ -148,6 +168,13 @@ class OperationCalculator():
                 # 判断元素为运算符
                 if stack.is_empty():  # 若当前为空栈则压入首个运算符，进入下一次循环
                     stack.push(element)
+                    if self.IsShow:
+                        print("Element:" + str(element))
+                        print("Stack: ", end='')
+                        stack.show()
+                        print("RPN List:", end='')
+                        print(RPN_list)
+                        print("\n")
                     continue
                 if element == ")" and stack.peek() == "(":
                     # 判断当前元素与栈顶元素是否构成了(和），若是则忽略该对括号
@@ -175,11 +202,24 @@ class OperationCalculator():
                 # 判断为数字，直接写入后缀表达式
                 RPN_list.append(element)
 
+            if self.IsShow:
+                print("Element:"+str(element))
+                print("Stack: ",end='')
+                stack.show()
+                print("RPN List:",end='')
+                print(RPN_list)
+                print("\n")
+
         # 遍历完成后，取出栈中全部元素并添加至后辍表达式
         PopandAppend()
+        if self.IsShow:
+            print("RPN list: ",end='')
+            print(RPN_list)
         return RPN_list
 
     def RPN2Result(self, RPN_list):
+        if self.IsShow:
+            print("\n计算后缀表达式并给出结果")
         '''
         计算后缀表达式并给出结果
         '''
@@ -187,41 +227,54 @@ class OperationCalculator():
         for element in RPN_list:  # 遍历后缀表达式的元素
             if stack.is_empty():
                 stack.push(RPN_list[0])  # 当栈为空时，push入第一关元素
+                if self.IsShow:
+                    print("Element:" + str(element))
+                    print("Stack: ", end='')
+                    stack.show()
+                    print("\n")
+                continue
+
+            if str(element) in "*/+-^":  # 遇到计算符号时，pop出顶上的两个元素，并基于操作符给予操作，得出答案
+                num1 = stack.pop()
+                num2 = stack.pop()
+                result = 0
+                if element == "+":
+                    result = num1 + num2
+                elif element == "-":
+                    result = num2 - num1
+                elif element == "/":
+                    result = num2 / num1
+                elif element == "*":
+                    result = num2 * num1
+                elif element == "^":
+                    result = num2 ** num1
+                stack.push(result)  # 将答案压入栈
             else:
-                if str(element) in "*/+-^":  # 遇到计算符号时，pop出顶上的两个元素，并基于操作符给予操作，得出答案
-                    num1 = stack.pop()
-                    num2 = stack.pop()
-                    result = 0
-                    if element == "+":
-                        result = num1 + num2
-                    elif element == "-":
-                        result = num2 - num1
-                    elif element == "/":
-                        result = num2 / num1
-                    elif element == "*":
-                        result = num2 * num1
-                    elif element == "^":
-                        result = num2 ** num1
-                    stack.push(result)  # 将答案压入栈
-                else:
-                    stack.push(element)  # 遇到数字元素，则压入栈
+                stack.push(element)  # 遇到数字元素，则压入栈
+            if self.IsShow:
+                print("Element:" + str(element))
+                print("Stack: ", end='')
+                stack.show()
+                print("\n")
         # 遍历完成后，取出栈顶（底）保存的唯一结果
         return stack.pop()
 
 
 if __name__ == "__main__":
     calculator = OperationCalculator()
-    calculator.input_str = "#*60"
-    print(calculator.CalcExpression())
+    calculator.IsShow = True
+    # calculator.input_str = "#*60"
+    # print(calculator.CalcExpression())
     print("SymCalc demo")
     print("Copyright (c) Quix Fan  @ZQWEI  All right reserved.")
-    calculator.input_str = "#*60"
-    print(calculator.CalcExpression())
+    # calculator.input_str = "#*60"
+    # print(calculator.CalcExpression())
     while True:
         try:
             result = calculator.CalcExpression()
             print(result)
         except:
             print("Invalid Input!")
-        calculator.input_str = "#*60"
-        print(calculator.CalcExpression())
+        print("\n")
+        # calculator.input_str = "#*60"
+        # print(calculator.CalcExpression())
